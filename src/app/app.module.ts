@@ -14,6 +14,8 @@ import { HeroeTablaComponent } from './components/heroe-tabla/heroe-tabla.compon
 import { SpacePipe } from './pipes/space.pipe';
 import { FormsModule } from '@angular/forms';
 import { HeroeFilterPipe } from './pipes/heroe-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HeroeFilterPipe } from './pipes/heroe-filter.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

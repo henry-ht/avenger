@@ -1,3 +1,31 @@
 <main class="container animated fadeIn">
-    <p>about works!</p>
+    <div class="table-responsive pt-3">
+        <table class="table ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Flag</th>
+                <th scope="col">Region</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p } | heroeFilter: 'name': 'alpha2Code':'region': searchItem;let i = index" class="animated fadeIn" >
+                <th scope="row ">
+                    {{item.alpha2Code}}
+                </th>
+                <td >
+                    {{item.name}}
+                </td>
+                <td>
+                    <img [src]="item.flag" class="img-fluid icon-flag" [alt]="item.name" >
+                </td>
+                <td>
+                    {{item.region}}
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>    
 </main>

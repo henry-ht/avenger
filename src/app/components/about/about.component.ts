@@ -1,3 +1,5 @@
+import { SearchObserveService } from './../../services/search-observe.service';
+import { RequestApiService } from './../../services/request-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
-  constructor() { }
+  data:object = [];
+  searchItem:string = '';
+  p:number = 1;
+  constructor(private request:RequestApiService, private  searchObv:SearchObserveService) {
+    this.searchObv.getTextSearch$()
+    .subscribe((data) => {
+      this.searchItem = data;
+    });
+   }
 
   ngOnInit(): void {
+    this.request.get('all')
+    .subscribe((value:Object) => {
+      this.data = value;
+    });
   }
 
 }
