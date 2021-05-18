@@ -1,0 +1,21 @@
+<div class="container animated fadeIn">
+    <h1 class="mb-4">
+        Heroes de DC y Marvel
+    </h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4"  >
+        <div class="col" *ngFor="let heroe of heroes | heroeFilter: 'nombre': 'bio': 'casa': searchItem; let i = index">
+            <app-heroe-card [heroeInput]="heroe" [index]="i" (heroeSeleccionado)="verHeroe($event)" ></app-heroe-card>
+        </div>
+    </div>
+    <section class="row mt-5">
+        <aside class="col-md-4">
+            <button class="btn btn-primary" type="button" (click)="pasarDatos();" >
+                pasar datos
+            </button>
+        </aside>
+        <div *ngIf="heroesTabala.length>0">
+            <app-heroe-tabla  [heroes]="heroesTabala"></app-heroe-tabla>
+        </div>
+    </section>
+</div>
+

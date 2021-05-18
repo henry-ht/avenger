@@ -1,0 +1,25 @@
+<div class="card animated fadeIn fast border-0 shadow-lg rounded-0" > 
+    <img class="card-img-top img-fluid card-img-heroe img-card-big mx-auto" [src]="heroe.img" [alt]="heroe.nombre">
+    <div class="card-body">
+        <h4 class="card-title text-uppercase">
+            {{ heroe.nombre}}
+        </h4>
+        <p class="card-text"> 
+            {{(heroe.bio | slice:0:80)+(heroe.bio.length >= 80 ? '...':'') }}
+        </p>
+        <p class="card-text text-end">
+            <small class="text-muted ">
+                {{heroe.aparicion}}
+            ​</small>
+        </p> 
+
+    </div>
+    <div class="card-footer border-0 bg-transparent">
+        <div class="btn-group w-100">
+            <button (click)="heroeEvent()" type="button" class="btn btn-outline-primary "> 
+                Ver más...
+            </button> 
+            <a [routerLink]="['/heroe', index]" class="btn btn-outline-dark">Ver más link...</a>
+        </div>
+    </div>
+</div> 
