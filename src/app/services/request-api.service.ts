@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -11,4 +11,5 @@ export class RequestApiService {
   get(url:string, data?:any) {
     return this.request.get(this.baseUrl+url, { params: data });
   }
+
 }

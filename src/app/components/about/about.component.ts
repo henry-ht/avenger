@@ -23,6 +23,7 @@ export class AboutComponent implements OnInit {
     .subscribe((value:Object) => {
       this.data = value;
     });
+
   }
 
 }
