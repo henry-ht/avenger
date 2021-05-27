@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { HeroeFilterPipe } from './pipes/heroe-filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FormDataComponent } from './components/form-data/form-data.component';
+import { CarComponent } from './components/car/car.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HeroeCardComponent,
     HeroeTablaComponent,
     SpacePipe,
-    HeroeFilterPipe
+    HeroeFilterPipe,
+    FormDataComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
